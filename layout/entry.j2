@@ -1,0 +1,9 @@
+{% extends "base.j2" %}
+
+{% block main -%}
+<h1>{{ resource.meta.title }}</h1>
+<p><span class="datestamp">{{ resource.meta.created }}</span></p>
+{% filter markdown|typogrify -%}
+{% block content -%}{%- endblock %}
+{%- endfilter %}
+{%- endblock %}

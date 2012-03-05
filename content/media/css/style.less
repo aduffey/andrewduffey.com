@@ -1,0 +1,140 @@
+@import "normalize.less";
+
+// Colors
+@base03:    #002b36;
+@base02:    #073642;
+@base01:    #1e2416; // #586e75;
+@base00:    #657b83;
+@base0:     #839496;
+@base1:     #93a1a1;
+@base2:     #eff1ee; // #eee8d5;
+@base3:     #fefffd; // #fdf6e3;
+@yellow:    #b58900;
+@orange:    #cb4b16;
+@red:       #dc322f;
+@magenta:   #d33682;
+@violet:    #6c71c4;
+@blue:      #268bd2;
+@cyan:      #2aa198;
+@green:     #488848; // #859900;
+
+@text_size: 16px;
+@mono_text_size: 14px;
+@line_height: 24px;
+
+// Global styles
+body {
+    background-color: @base3;
+    font-family: Vollkorn, serif;
+    font-size: @text_size;
+    line-height: @line_height;
+    text-rendering: optimizeLegibility;
+    color: @base01;
+}
+
+.selection {
+    background: @base01;
+    color: @base3;
+    text-shadow: none;
+}
+::-moz-selection { .selection }
+::selection { .selection }
+
+div#container {
+    width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: @green;
+    
+    &:visited {
+        color: @green;
+    }
+    
+    &:hover {
+        color: @base01;
+    }
+}
+
+h1 {
+    font-size: 2.8 * @text_size;
+    line-height: 1;
+    font-weight: normal;
+    margin: 0 0 0 0;
+}
+
+h2 {
+    font-size: 2 * @text_size;
+    line-height: 2 * @line_height;
+    font-weight: normal;
+    margin: @line_height 0 @line_height 0;
+}
+
+h3 {
+    font-size: 1.3 * @text_size;
+    line-height: 2 * @line_height;
+    font-weight: normal;
+    margin: @line_height 0 @line_height 0;
+}
+
+p {
+    margin: 0 0 @line_height 0;
+}
+
+.code {
+    font-size: @mono_text_size;
+    background-color: @base2;
+}
+
+code {
+    .code
+}
+
+pre {
+    overflow-x: auto;
+    margin: 0 0 0 0;
+    .code
+}
+
+// Header stuff
+header {
+    text-align: right;
+    border-top: 0.2em solid @base01;
+    margin-bottom: 2 * @line_height;
+    font-size: 1.4 * @text_size;
+    line-height: 2 * @line_height;
+
+    a {
+        margin: 0 0 0 2em;
+        text-decoration: none;
+        color: @base01;
+
+        &:visited {
+            color: @base01;
+        }
+
+        &#andrew {
+            float: left;
+            margin: 0 0 0 0;
+            color: @green;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    color: @base1;
+}
+
+// Blog entry specific stuff
+span.datestamp {
+    color: @green;
+}
+
+@import "pygments.less";
+@import "media-queries.less";
+@import "helpers.less";
+@import "print.less";
